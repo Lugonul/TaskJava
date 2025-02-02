@@ -2,15 +2,20 @@ import java.util.Scanner;
 
 public class Main {
     public static String culc(String input) throws Exception {
-        int a;
-        int b;
-        String operation;
+        int a = 0;
+        int b = 0;
+        String operation ="";
         int result;
 
         String[] elements = input.split(" ");
-        a = Integer.parseInt(elements[0]);
-        operation = elements[1];
-        b = Integer.parseInt(elements[2]);
+        try {
+            a = Integer.parseInt(elements[0]);
+            operation = elements[1];
+            b = Integer.parseInt(elements[2]);
+        }
+        catch (NumberFormatException e1){
+            System.out.println("Операции возможны только между цифрами");
+        }
         if (elements.length != 3) throw new Exception("Недопустимый формат записи");
         if (a < 1 || a > 10 || b < 1 || b > 10) throw new Exception("Недопустимое число");
 

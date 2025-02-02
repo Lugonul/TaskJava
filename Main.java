@@ -14,7 +14,7 @@ public class Main {
             b = Integer.parseInt(elements[2]);
         }
         catch (NumberFormatException e1){
-            System.out.println("Операции возможны только между цифрами");
+            throw new NumberFormatException("Операции возможны только между цифрами");
         }
         if (elements.length != 3) throw new Exception("Недопустимый формат записи");
         if (a < 1 || a > 10 || b < 1 || b > 10) throw new Exception("Недопустимое число");
